@@ -6,7 +6,7 @@
 	function calculate($edad){
 		$result="";
 		if (empty($edad)){
-			$result =  "Error, you must enter a value";
+			$error =  "Error, you must enter a value";
 		}else{
 			if (is_numeric($edad)){
 				if (($edad>=18) && ($edad<=65)){
@@ -19,10 +19,17 @@
 						} }  }
 		
 			else{
-				$result = "Error! You must enter a integer";
+				$error = "Error! You must enter a integer";
 				}
 		}
-		return $result;
+
+		if ($error === null){
+			return $result;
+			}else{
+				return $error;
+
+			}
+		
 	}
 	
 
